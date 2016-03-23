@@ -87,6 +87,13 @@
                                     <rect key="frame" x="642" y="248" width="80" height="80"/>
                                 </variation>
                             </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96z-z7-PMe" userLabel="RestartBtn">
+                                <rect key="frame" x="197" y="268" width="207" height="63"/>
+                                <state key="normal" image="restartbtn"/>
+                                <connections>
+                                    <action selector="onRestartBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aB7-2S-bqQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -110,11 +117,13 @@
                             <constraint firstItem="2yC-ZZ-pNN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-125" id="X1z-aT-Rh4"/>
                             <constraint firstAttribute="trailing" secondItem="PPp-A1-uLY" secondAttribute="trailing" id="YrG-Je-UD5"/>
                             <constraint firstItem="nvW-Zj-sj0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ytc-bo-Oeg"/>
+                            <constraint firstItem="96z-z7-PMe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZcM-X1-6Qz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PPp-A1-uLY" secondAttribute="bottom" id="hfi-uj-Gjx"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="61Q-60-7hB" secondAttribute="bottom" id="kIo-DO-dv0"/>
                             <constraint firstItem="PPp-A1-uLY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rN3-Qj-Tw0"/>
                             <constraint firstItem="U6u-Fn-iIk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sIb-dQ-phc"/>
                             <constraint firstItem="U6u-Fn-iIk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uWF-g3-p0P"/>
+                            <constraint firstItem="96z-z7-PMe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vpn-Pl-oqe"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -144,6 +153,7 @@
                         <outlet property="penalty1Img" destination="keW-QJ-NDl" id="BIM-N5-eDH"/>
                         <outlet property="penalty2Img" destination="RRM-5z-4hy" id="BH9-TP-GCA"/>
                         <outlet property="penalty3Img" destination="RXf-WK-RAF" id="Hze-gx-GmB"/>
+                        <outlet property="restartBtn" destination="96z-z7-PMe" id="2mp-OY-ABn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -158,6 +168,7 @@
         <image name="heart" width="95" height="98"/>
         <image name="idle1" width="889" height="615"/>
         <image name="livespanel" width="468" height="137"/>
+        <image name="restartbtn" width="207" height="63"/>
         <image name="skull" width="95" height="98"/>
     </resources>
 </document>

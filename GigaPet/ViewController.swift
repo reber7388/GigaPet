@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var penalty1Img: UIImageView!
     @IBOutlet weak var penalty2Img: UIImageView!
     @IBOutlet weak var penalty3Img: UIImageView!
+    @IBOutlet weak var restartBtn: UIButton!
     
     let DIM_ALPHA: CGFloat = 0.2 //in graphics 1.0 if full/opaque anything lower is not opaque
     let OPAUQE: CGFloat = 1.0
@@ -24,7 +25,7 @@ class ViewController: UIViewController {
     
     var penalties = 0
     var timer: NSTimer! //we are definietly going to have a timer therefore we can unwrap it here (exclimation point)
-    var monsterHappy = false
+    var monsterHappy = true
     var currentItm: UInt32 = 0
     
     var musicPlayer: AVAudioPlayer!
@@ -43,7 +44,7 @@ class ViewController: UIViewController {
         penalty2Img.alpha = DIM_ALPHA
         penalty3Img.alpha = DIM_ALPHA
         
-        //the colon after "itemDroppedOnCharacter" means there is one or more parameters you NNED this colon or it wont work
+        //the colon after "itemDroppedOnCharacter" means there is one or more parameters you NEED this colon or it wont work
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "itemDroppedOnCharacter:", name: "onTargetDropped", object: nil)
         
         do {
@@ -71,7 +72,7 @@ class ViewController: UIViewController {
         } catch let err as NSError {
             print(err.debugDescription)
         }
-        
+        changeGameState()
         startTimer()
         
     }
@@ -126,6 +127,7 @@ class ViewController: UIViewController {
             
             if penalties >= MAX_PENALTIES {
                 gameOver() //we died
+                restartBtn.hidden = false
             }
             
         }
@@ -157,6 +159,17 @@ class ViewController: UIViewController {
         monsterImg.playDeathAnimation()
         sfxDeath.play()
     }
+    
+    
+    @IBAction func onRestartBtnPressed(sender: AnyObject) {
+        
+        monsterHappy = true
+        restartBtn.hidden = true
+        monsterImg.playReviveAnimation()
+        penalties = 0
+        viewDidLoad()
+    }
+    
 
 }
 

@@ -56,4 +56,23 @@ class MonsterImg: UIImageView {
         self.startAnimating()
     }
     
+    func playReviveAnimation() {
+        
+        self.image = UIImage(named: "idle1.png")
+        
+        self.animationImages = nil //empty the animation images out
+        
+        var imgArray = [UIImage]()
+        for var x = 5; x >= 1; x -= 1 {
+            let img = UIImage(named: "dead\(x).png")
+            imgArray.append(img!)
+        }
+        
+        self.animationImages = imgArray
+        self.animationDuration = 0.8
+        self.animationRepeatCount = 1 //having a zero here means it will repeat infinitely
+        self.startAnimating()
+        NSTimer.scheduledTimerWithTimeInterval(0.8, target: self, selector: "playIdleAnimation", userInfo: nil, repeats: false)
+    }
+    
 }
