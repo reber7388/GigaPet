@@ -37,7 +37,8 @@ class DragImg: UIImageView {
         
         if let touch = touches.first, let target = dropTarget { //if there is a touch AND there is a target
             
-            let postition = touch.locationInView(self.superview)
+            let postition = touch.locationInView(self.superview) //this is the one from Marks vid
+            //let postition = touch.locationInView(self.superview?.superview)
             
             if CGRectContainsPoint(target.frame, postition) { // if the postion is anywhere on the monsters UIImageView frame, you dropped it on the monster
                 NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "onTargetDropped", object: nil)) //
