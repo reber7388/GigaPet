@@ -490,19 +490,17 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="2xY-K8-OXM"/>
-                                <exclude reference="b8g-jp-Pog"/>
-                                <exclude reference="VJc-0w-hjk"/>
                                 <exclude reference="VrS-xa-sP7"/>
                                 <exclude reference="e5I-AM-aua"/>
+                                <exclude reference="2xY-K8-OXM"/>
                                 <exclude reference="vVm-Vc-jxd"/>
                                 <exclude reference="ypD-qz-58b"/>
+                                <exclude reference="b8g-jp-Pog"/>
+                                <exclude reference="VJc-0w-hjk"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
-                                <include reference="b8g-jp-Pog"/>
-                                <exclude reference="iek-eb-Jui"/>
                                 <exclude reference="KdI-pc-cOn"/>
                                 <include reference="VrS-xa-sP7"/>
                                 <include reference="e5I-AM-aua"/>
@@ -511,6 +509,8 @@
                                 <exclude reference="cMJ-Hm-w80"/>
                                 <include reference="vVm-Vc-jxd"/>
                                 <include reference="ypD-qz-58b"/>
+                                <include reference="b8g-jp-Pog"/>
+                                <exclude reference="iek-eb-Jui"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
