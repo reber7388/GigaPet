@@ -12,6 +12,11 @@
 		86D021E21CA0CEC00023A8DA /* death.wav in Resources */ = {isa = PBXBuildFile; fileRef = 86D021DD1CA0CEC00023A8DA /* death.wav */; };
 		86D021E31CA0CEC00023A8DA /* heart.wav in Resources */ = {isa = PBXBuildFile; fileRef = 86D021DE1CA0CEC00023A8DA /* heart.wav */; };
 		86D021E41CA0CEC00023A8DA /* skull.wav in Resources */ = {isa = PBXBuildFile; fileRef = 86D021DF1CA0CEC00023A8DA /* skull.wav */; };
+		86D021EA1CA31FA50023A8DA /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D021E91CA31FA50023A8DA /* MenuVC.swift */; };
+		86D021EC1CA4B27E0023A8DA /* BabyGolem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D021EB1CA4B27E0023A8DA /* BabyGolem.swift */; };
+		86D021EE1CA4F63F0023A8DA /* BabyGolemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D021ED1CA4F63F0023A8DA /* BabyGolemVC.swift */; };
+		86D021F01CB41ADA0023A8DA /* Snail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D021EF1CB41ADA0023A8DA /* Snail.swift */; };
+		86D021F21CB41B970023A8DA /* SnailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D021F11CB41B970023A8DA /* SnailVC.swift */; };
 		86E795BE1C9A840600ACF4D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E795BD1C9A840600ACF4D5 /* AppDelegate.swift */; };
 		86E795C01C9A840600ACF4D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E795BF1C9A840600ACF4D5 /* ViewController.swift */; };
 		86E795C31C9A840600ACF4D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86E795C11C9A840600ACF4D5 /* Main.storyboard */; };
@@ -27,6 +32,11 @@
 		86D021DD1CA0CEC00023A8DA /* death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death.wav; sourceTree = "<group>"; };
 		86D021DE1CA0CEC00023A8DA /* heart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heart.wav; sourceTree = "<group>"; };
 		86D021DF1CA0CEC00023A8DA /* skull.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = skull.wav; sourceTree = "<group>"; };
+		86D021E91CA31FA50023A8DA /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		86D021EB1CA4B27E0023A8DA /* BabyGolem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyGolem.swift; sourceTree = "<group>"; };
+		86D021ED1CA4F63F0023A8DA /* BabyGolemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BabyGolemVC.swift; sourceTree = "<group>"; };
+		86D021EF1CB41ADA0023A8DA /* Snail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snail.swift; sourceTree = "<group>"; };
+		86D021F11CB41B970023A8DA /* SnailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnailVC.swift; sourceTree = "<group>"; };
 		86E795BA1C9A840600ACF4D5 /* GigaPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GigaPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E795BD1C9A840600ACF4D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86E795BF1C9A840600ACF4D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,8 +84,13 @@
 				86D021DE1CA0CEC00023A8DA /* heart.wav */,
 				86D021DF1CA0CEC00023A8DA /* skull.wav */,
 				86E795BD1C9A840600ACF4D5 /* AppDelegate.swift */,
+				86D021F11CB41B970023A8DA /* SnailVC.swift */,
 				86E795BF1C9A840600ACF4D5 /* ViewController.swift */,
+				86D021ED1CA4F63F0023A8DA /* BabyGolemVC.swift */,
+				86D021E91CA31FA50023A8DA /* MenuVC.swift */,
 				86E795D11C9BB5AC00ACF4D5 /* MonsterImg.swift */,
+				86D021EB1CA4B27E0023A8DA /* BabyGolem.swift */,
+				86D021EF1CB41ADA0023A8DA /* Snail.swift */,
 				86E795CF1C9AA23C00ACF4D5 /* DragImg.swift */,
 				86E795C11C9A840600ACF4D5 /* Main.storyboard */,
 				86E795C41C9A840600ACF4D5 /* Assets.xcassets */,
@@ -162,10 +177,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86D021EC1CA4B27E0023A8DA /* BabyGolem.swift in Sources */,
+				86D021F21CB41B970023A8DA /* SnailVC.swift in Sources */,
+				86D021EE1CA4F63F0023A8DA /* BabyGolemVC.swift in Sources */,
 				86E795D21C9BB5AC00ACF4D5 /* MonsterImg.swift in Sources */,
 				86E795D01C9AA23C00ACF4D5 /* DragImg.swift in Sources */,
 				86E795C01C9A840600ACF4D5 /* ViewController.swift in Sources */,
+				86D021F01CB41ADA0023A8DA /* Snail.swift in Sources */,
 				86E795BE1C9A840600ACF4D5 /* AppDelegate.swift in Sources */,
+				86D021EA1CA31FA50023A8DA /* MenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

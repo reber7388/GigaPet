@@ -1,17 +1,17 @@
 //
-//  ViewController.swift
+//  SnailVC.swift
 //  GigaPet
 //
-//  Created by Reber on 3/16/16.
+//  Created by Reber on 4/5/16.
 //  Copyright © 2016 Reber. All rights reserved.
 //
 
 import UIKit
 import AVFoundation //import for sound FX
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var monsterImg: MonsterImg!
+class SnailVC: UIViewController {
+    
+    @IBOutlet weak var monsterImg: Snail!
     @IBOutlet weak var foodImg: DragImg!
     @IBOutlet weak var heartImg: DragImg!
     @IBOutlet weak var penalty1Img: UIImageView!
@@ -170,6 +170,6 @@ class ViewController: UIViewController {
         viewDidLoad()
     }
     
-
+    
 }
 

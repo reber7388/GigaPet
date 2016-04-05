@@ -9,9 +9,9 @@
 import UIKit
 import AVFoundation //import for sound FX
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var monsterImg: MonsterImg!
+class BabyGolemVC: UIViewController {
+    
+    @IBOutlet weak var monsterImg: BabyGolem!
     @IBOutlet weak var foodImg: DragImg!
     @IBOutlet weak var heartImg: DragImg!
     @IBOutlet weak var penalty1Img: UIImageView!
@@ -170,6 +170,6 @@ class ViewController: UIViewController {
         viewDidLoad()
     }
     
-
+    
 }
 
