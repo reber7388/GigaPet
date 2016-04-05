@@ -60,6 +60,26 @@ class BabyGolem: UIImageView {
         
     }
     
+    func playThrowRockAnimation() {
+        
+        self.image = UIImage(named: "bGolemAttack1.png") //this sets a default image
+        
+        self.animationImages = nil //clear any images that might be in there
+        
+        var imgArray = [UIImage]()
+        for x in 1...7 {
+            let img = UIImage(named: "bGolemAttack\(x).png")
+            imgArray.append(img!)
+        }
+        
+        self.animationImages = imgArray
+        self.animationDuration = 0.8
+        self.animationRepeatCount = 1 //having a zero here means it will repeat infinitely
+        self.startAnimating()
+        NSTimer.scheduledTimerWithTimeInterval(0.8, target: self, selector: "playIdleAnimation", userInfo: nil, repeats: false)
+        
+    }
+    
     
     func playReviveAnimation() {
         

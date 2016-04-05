@@ -14,6 +14,7 @@ class BabyGolemVC: UIViewController {
     @IBOutlet weak var monsterImg: BabyGolem!
     @IBOutlet weak var foodImg: DragImg!
     @IBOutlet weak var heartImg: DragImg!
+    @IBOutlet weak var weights: DragImg!
     @IBOutlet weak var penalty1Img: UIImageView!
     @IBOutlet weak var penalty2Img: UIImageView!
     @IBOutlet weak var penalty3Img: UIImageView!
@@ -33,12 +34,14 @@ class BabyGolemVC: UIViewController {
     var sfxHeart: AVAudioPlayer!
     var sfxDeath: AVAudioPlayer!
     var sfxSkull: AVAudioPlayer!
+    var sfxWeights: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         foodImg.dropTarget = monsterImg
         heartImg.dropTarget = monsterImg
+        weights.dropTarget = monsterImg
         
         penalty1Img.alpha = DIM_ALPHA
         penalty2Img.alpha = DIM_ALPHA
@@ -58,6 +61,8 @@ class BabyGolemVC: UIViewController {
             
             try sfxSkull = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("skull", ofType: "wav")!))
             
+            try sfxWeights = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("heart", ofType: "wav")!))
+            
             
             musicPlayer.prepareToPlay()
             musicPlayer.play() //start the backgorund music
@@ -66,7 +71,7 @@ class BabyGolemVC: UIViewController {
             sfxHeart.prepareToPlay()
             sfxDeath.prepareToPlay()
             sfxSkull.prepareToPlay()
-            
+            sfxWeights.prepareToPlay()
             
             
         } catch let err as NSError {
@@ -85,11 +90,16 @@ class BabyGolemVC: UIViewController {
         foodImg.userInteractionEnabled = false
         heartImg.alpha = DIM_ALPHA
         heartImg.userInteractionEnabled = false
+        weights.alpha = DIM_ALPHA
+        weights.userInteractionEnabled = false
         
         if currentItm == 0 {
             sfxHeart.play()
-        } else {
+        } else if currentItm == 1 {
             sfxBite.play()
+        } else {
+            monsterImg.playThrowRockAnimation()
+            sfxWeights.play()
         }
     }
     
@@ -132,21 +142,38 @@ class BabyGolemVC: UIViewController {
             
         }
         
-        
-        let rand = arc4random_uniform(2)//give a random number between 2 numbers which will be 0 or 1
+        //randomly decides what the pet wants
+        let rand = arc4random_uniform(3)//give a random number between 3 numbers
         
         if rand == 0 {
+            heartImg.alpha = OPAUQE
+            heartImg.userInteractionEnabled = true
+            
             foodImg.alpha = DIM_ALPHA
             foodImg.userInteractionEnabled = false
             
-            heartImg.alpha = OPAUQE
-            heartImg.userInteractionEnabled = true
-        } else {
+            weights.alpha = DIM_ALPHA
+            weights.userInteractionEnabled = false
+            
+        } else if rand == 1{
             heartImg.alpha = DIM_ALPHA
             heartImg.userInteractionEnabled = false
             
             foodImg.alpha = OPAUQE
             foodImg.userInteractionEnabled = true
+            
+            weights.alpha = DIM_ALPHA
+            weights.userInteractionEnabled = false
+        }
+        else {
+            heartImg.alpha = DIM_ALPHA
+            heartImg.userInteractionEnabled = false
+            
+            foodImg.alpha = DIM_ALPHA
+            foodImg.userInteractionEnabled = false
+            
+            weights.alpha = OPAUQE
+            weights.userInteractionEnabled = true
         }
         
         currentItm = rand

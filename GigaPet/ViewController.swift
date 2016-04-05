@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var monsterImg: MonsterImg!
     @IBOutlet weak var foodImg: DragImg!
     @IBOutlet weak var heartImg: DragImg!
+    @IBOutlet weak var waterDropImg: DragImg!
     @IBOutlet weak var penalty1Img: UIImageView!
     @IBOutlet weak var penalty2Img: UIImageView!
     @IBOutlet weak var penalty3Img: UIImageView!
@@ -33,12 +34,14 @@ class ViewController: UIViewController {
     var sfxHeart: AVAudioPlayer!
     var sfxDeath: AVAudioPlayer!
     var sfxSkull: AVAudioPlayer!
+    var sfxWaterDrop: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         foodImg.dropTarget = monsterImg
         heartImg.dropTarget = monsterImg
+        waterDropImg.dropTarget = monsterImg
         
         penalty1Img.alpha = DIM_ALPHA
         penalty2Img.alpha = DIM_ALPHA
@@ -58,6 +61,7 @@ class ViewController: UIViewController {
             
             try sfxSkull = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("skull", ofType: "wav")!))
             
+            try sfxWaterDrop = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("heart", ofType: "wav")!))
             
             musicPlayer.prepareToPlay()
             musicPlayer.play() //start the backgorund music
@@ -66,6 +70,7 @@ class ViewController: UIViewController {
             sfxHeart.prepareToPlay()
             sfxDeath.prepareToPlay()
             sfxSkull.prepareToPlay()
+            sfxWaterDrop.prepareToPlay()
             
             
             
@@ -85,11 +90,15 @@ class ViewController: UIViewController {
         foodImg.userInteractionEnabled = false
         heartImg.alpha = DIM_ALPHA
         heartImg.userInteractionEnabled = false
+        waterDropImg.alpha = DIM_ALPHA
+        waterDropImg.userInteractionEnabled = false
         
         if currentItm == 0 {
             sfxHeart.play()
-        } else {
+        } else if currentItm == 1 {
             sfxBite.play()
+        } else {
+            sfxWaterDrop.play()
         }
     }
     
@@ -132,21 +141,36 @@ class ViewController: UIViewController {
             
         }
         
+        //randomly generate what the pet wants
+        let rand = arc4random_uniform(3)//give a random number between 3 numbers which will be 0 or 1 or 2
         
-        let rand = arc4random_uniform(2)//give a random number between 2 numbers which will be 0 or 1
-        
-        if rand == 0 {
+        if rand == 0 { //if 0 pet wants a heart
+            heartImg.alpha = OPAUQE
+            heartImg.userInteractionEnabled = true
+            
             foodImg.alpha = DIM_ALPHA
             foodImg.userInteractionEnabled = false
             
-            heartImg.alpha = OPAUQE
-            heartImg.userInteractionEnabled = true
-        } else {
+            waterDropImg.alpha = DIM_ALPHA
+            waterDropImg.userInteractionEnabled = false
+        } else if rand == 1 {
             heartImg.alpha = DIM_ALPHA
             heartImg.userInteractionEnabled = false
             
             foodImg.alpha = OPAUQE
             foodImg.userInteractionEnabled = true
+            
+            waterDropImg.alpha = DIM_ALPHA
+            waterDropImg.userInteractionEnabled = false
+        } else {
+            heartImg.alpha = DIM_ALPHA
+            heartImg.userInteractionEnabled = false
+            
+            foodImg.alpha = DIM_ALPHA
+            foodImg.userInteractionEnabled = false
+            
+            waterDropImg.alpha = OPAUQE
+            waterDropImg.userInteractionEnabled = true
         }
         
         currentItm = rand

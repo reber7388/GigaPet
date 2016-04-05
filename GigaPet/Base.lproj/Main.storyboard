@@ -94,18 +94,35 @@
                                     <action selector="onRestartBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aB7-2S-bqQ"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="waterdrop" translatesAutoresizingMaskIntoConstraints="NO" id="rby-yb-QI9" customClass="DragImg" customModule="GigaPet" customModuleProvider="target">
+                                <rect key="frame" x="65" y="120" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="arh-bk-jdy"/>
+                                    <constraint firstAttribute="width" constant="80" id="jTP-wn-XTp"/>
+                                    <constraint firstAttribute="height" constant="80" id="mLV-dZ-lYd"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="p8J-2u-Naq"/>
+                                </constraints>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="462" y="72" width="80" height="80"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="642" y="160" width="80" height="80"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="61Q-60-7hB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="12W-qB-oIw"/>
                             <constraint firstItem="3mw-R1-Hy6" firstAttribute="centerX" secondItem="U6u-Fn-iIk" secondAttribute="centerX" id="4mV-HA-5H8"/>
                             <constraint firstAttribute="trailing" secondItem="61Q-60-7hB" secondAttribute="trailing" id="4pW-Rf-Sok"/>
+                            <constraint firstItem="U6u-Fn-iIk" firstAttribute="centerX" secondItem="rby-yb-QI9" secondAttribute="centerX" id="7Xy-nz-2bU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="U6u-Fn-iIk" secondAttribute="trailing" constant="38" id="8p0-I1-LXO"/>
                             <constraint firstItem="PPp-A1-uLY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="A6p-5v-jXK"/>
                             <constraint firstItem="3mw-R1-Hy6" firstAttribute="centerY" secondItem="U6u-Fn-iIk" secondAttribute="centerY" id="AmG-9N-ba7"/>
                             <constraint firstItem="3mw-R1-Hy6" firstAttribute="top" secondItem="U6u-Fn-iIk" secondAttribute="bottom" constant="12" id="CP4-5s-4z6">
                                 <variation key="heightClass=compact" constant="10"/>
                             </constraint>
+                            <constraint firstItem="U6u-Fn-iIk" firstAttribute="centerX" secondItem="rby-yb-QI9" secondAttribute="centerX" id="FLz-tl-hAc"/>
                             <constraint firstItem="nvW-Zj-sj0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G6L-zQ-A1K"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2yC-ZZ-pNN" secondAttribute="bottom" constant="44" id="G9R-zS-fSU"/>
                             <constraint firstItem="U6u-Fn-iIk" firstAttribute="top" secondItem="nvW-Zj-sj0" secondAttribute="bottom" constant="20" id="HfP-NH-ogB">
@@ -118,7 +135,10 @@
                             <constraint firstAttribute="trailing" secondItem="PPp-A1-uLY" secondAttribute="trailing" id="YrG-Je-UD5"/>
                             <constraint firstItem="nvW-Zj-sj0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ytc-bo-Oeg"/>
                             <constraint firstItem="96z-z7-PMe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZcM-X1-6Qz"/>
+                            <constraint firstItem="U6u-Fn-iIk" firstAttribute="leading" secondItem="rby-yb-QI9" secondAttribute="trailing" constant="15" id="hAx-Fc-X7L"/>
+                            <constraint firstItem="U6u-Fn-iIk" firstAttribute="centerY" secondItem="rby-yb-QI9" secondAttribute="centerY" id="hE2-Co-hen"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PPp-A1-uLY" secondAttribute="bottom" id="hfi-uj-Gjx"/>
+                            <constraint firstItem="U6u-Fn-iIk" firstAttribute="top" secondItem="rby-yb-QI9" secondAttribute="bottom" constant="10" id="jk4-v8-c9t"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="61Q-60-7hB" secondAttribute="bottom" id="kIo-DO-dv0"/>
                             <constraint firstItem="PPp-A1-uLY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rN3-Qj-Tw0"/>
                             <constraint firstItem="U6u-Fn-iIk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sIb-dQ-phc"/>
@@ -127,7 +147,10 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="7Xy-nz-2bU"/>
                                 <exclude reference="8p0-I1-LXO"/>
+                                <exclude reference="FLz-tl-hAc"/>
+                                <exclude reference="jk4-v8-c9t"/>
                                 <exclude reference="uWF-g3-p0P"/>
                                 <exclude reference="4mV-HA-5H8"/>
                                 <exclude reference="CP4-5s-4z6"/>
@@ -135,8 +158,11 @@
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
+                                <include reference="7Xy-nz-2bU"/>
                                 <include reference="8p0-I1-LXO"/>
                                 <exclude reference="HfP-NH-ogB"/>
+                                <exclude reference="hE2-Co-hen"/>
+                                <include reference="jk4-v8-c9t"/>
                                 <exclude reference="sIb-dQ-phc"/>
                                 <include reference="uWF-g3-p0P"/>
                                 <include reference="4mV-HA-5H8"/>
@@ -154,6 +180,7 @@
                         <outlet property="penalty2Img" destination="RRM-5z-4hy" id="BH9-TP-GCA"/>
                         <outlet property="penalty3Img" destination="RXf-WK-RAF" id="Hze-gx-GmB"/>
                         <outlet property="restartBtn" destination="96z-z7-PMe" id="2mp-OY-ABn"/>
+                        <outlet property="waterDropImg" destination="rby-yb-QI9" id="1Oe-Kv-Vot"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -416,7 +443,7 @@
                                     <rect key="frame" x="642" y="160" width="80" height="80"/>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="tfQ-7c-Zl4" customClass="DragImg" customModule="GigaPet" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="hotdog" translatesAutoresizingMaskIntoConstraints="NO" id="tfQ-7c-Zl4" customClass="DragImg" customModule="GigaPet" customModuleProvider="target">
                                 <rect key="frame" x="341" y="120" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Kv8-wm-iwU"/>
@@ -451,6 +478,19 @@
                                     <rect key="frame" x="0.0" y="107" width="325" height="225"/>
                                 </variation>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="weights" translatesAutoresizingMaskIntoConstraints="NO" id="X8u-K2-Unj" customClass="DragImg" customModule="GigaPet" customModuleProvider="target">
+                                <rect key="frame" x="37" y="120" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="R3D-3y-xlY"/>
+                                    <constraint firstAttribute="height" constant="80" id="dvT-Vi-jPM"/>
+                                </constraints>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="462" y="66" width="80" height="80"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="642" y="160" width="80" height="80"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -464,6 +504,9 @@
                             <constraint firstItem="1Ae-2a-RM0" firstAttribute="top" secondItem="5iM-np-Op9" secondAttribute="bottom" constant="8" id="LMJ-dy-wth"/>
                             <constraint firstItem="3xQ-Ts-5CF" firstAttribute="top" secondItem="XnT-ZT-ONp" secondAttribute="top" id="QdJ-GT-Hct"/>
                             <constraint firstItem="cjS-iR-fdR" firstAttribute="centerY" secondItem="XnT-ZT-ONp" secondAttribute="centerY" id="Rbx-lu-aZA"/>
+                            <constraint firstItem="IxX-1z-Q64" firstAttribute="centerX" secondItem="X8u-K2-Unj" secondAttribute="centerX" id="SYH-S3-MtJ"/>
+                            <constraint firstItem="IxX-1z-Q64" firstAttribute="centerY" secondItem="X8u-K2-Unj" secondAttribute="centerY" id="UgL-GZ-qIe"/>
+                            <constraint firstItem="IxX-1z-Q64" firstAttribute="top" secondItem="X8u-K2-Unj" secondAttribute="bottom" constant="10" id="UzR-ls-8rh"/>
                             <constraint firstItem="CjT-Kj-pc6" firstAttribute="top" secondItem="5iM-np-Op9" secondAttribute="bottom" constant="44" id="VJc-0w-hjk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IxX-1z-Q64" secondAttribute="trailing" constant="38" id="VrS-xa-sP7"/>
                             <constraint firstItem="cjS-iR-fdR" firstAttribute="centerX" secondItem="XnT-ZT-ONp" secondAttribute="centerX" id="Zcd-vZ-FQx"/>
@@ -480,6 +523,7 @@
                             <constraint firstItem="w18-Fc-UiH" firstAttribute="centerX" secondItem="bBd-6j-ASm" secondAttribute="centerX" id="nuz-Gz-8bn"/>
                             <constraint firstItem="1Ae-2a-RM0" firstAttribute="leading" secondItem="XnT-ZT-ONp" secondAttribute="leading" id="r8t-PQ-UNj"/>
                             <constraint firstAttribute="trailing" secondItem="3xQ-Ts-5CF" secondAttribute="trailing" id="tIB-ao-KOR"/>
+                            <constraint firstItem="IxX-1z-Q64" firstAttribute="leading" secondItem="X8u-K2-Unj" secondAttribute="trailing" constant="15" id="uK2-rW-lUM"/>
                             <constraint firstItem="tfQ-7c-Zl4" firstAttribute="centerX" secondItem="IxX-1z-Q64" secondAttribute="centerX" id="vVm-Vc-jxd"/>
                             <constraint firstItem="IxX-1z-Q64" firstAttribute="top" secondItem="bBd-6j-ASm" secondAttribute="bottom" constant="20" id="w1j-0j-mCq">
                                 <variation key="heightClass=compact-widthClass=regular" constant="20"/>
@@ -490,27 +534,33 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="VrS-xa-sP7"/>
-                                <exclude reference="e5I-AM-aua"/>
                                 <exclude reference="2xY-K8-OXM"/>
-                                <exclude reference="vVm-Vc-jxd"/>
-                                <exclude reference="ypD-qz-58b"/>
                                 <exclude reference="b8g-jp-Pog"/>
                                 <exclude reference="VJc-0w-hjk"/>
+                                <exclude reference="SYH-S3-MtJ"/>
+                                <exclude reference="UzR-ls-8rh"/>
+                                <exclude reference="VrS-xa-sP7"/>
+                                <exclude reference="e5I-AM-aua"/>
+                                <exclude reference="vVm-Vc-jxd"/>
+                                <exclude reference="ypD-qz-58b"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
+                                <include reference="b8g-jp-Pog"/>
+                                <exclude reference="iek-eb-Jui"/>
                                 <exclude reference="KdI-pc-cOn"/>
+                                <include reference="SYH-S3-MtJ"/>
+                                <exclude reference="UgL-GZ-qIe"/>
+                                <include reference="UzR-ls-8rh"/>
                                 <include reference="VrS-xa-sP7"/>
                                 <include reference="e5I-AM-aua"/>
+                                <exclude reference="uK2-rW-lUM"/>
                                 <exclude reference="w1j-0j-mCq"/>
                                 <exclude reference="b1n-gz-mfj"/>
                                 <exclude reference="cMJ-Hm-w80"/>
                                 <include reference="vVm-Vc-jxd"/>
                                 <include reference="ypD-qz-58b"/>
-                                <include reference="b8g-jp-Pog"/>
-                                <exclude reference="iek-eb-Jui"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -527,6 +577,7 @@
                         <outlet property="penalty2Img" destination="ROJ-he-NIM" id="qqg-OA-nGl"/>
                         <outlet property="penalty3Img" destination="dUq-V3-G8f" id="gcJ-cU-Mfv"/>
                         <outlet property="restartBtn" destination="cjS-iR-fdR" id="SgM-eV-2vd"/>
+                        <outlet property="weights" destination="X8u-K2-Unj" id="TxD-ub-Tfu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTw-nE-hHb" sceneMemberID="firstResponder"/>
@@ -597,7 +648,7 @@
                                     <rect key="frame" x="642" y="160" width="80" height="80"/>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="L88-un-kNQ" customClass="DragImg" customModule="GigaPet" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="leaf" translatesAutoresizingMaskIntoConstraints="NO" id="L88-un-kNQ" customClass="DragImg" customModule="GigaPet" customModuleProvider="target">
                                 <rect key="frame" x="341" y="120" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="2re-lU-2rd"/>
@@ -724,9 +775,11 @@
         <image name="food" width="95" height="98"/>
         <image name="ground" width="1444" height="151"/>
         <image name="heart" width="95" height="98"/>
+        <image name="hotdog" width="541" height="448"/>
         <image name="idle1" width="889" height="615"/>
         <image name="ladder2" width="72" height="127"/>
         <image name="ladder4" width="72" height="127"/>
+        <image name="leaf" width="532" height="552"/>
         <image name="livespanel" width="468" height="137"/>
         <image name="menuBG" width="640" height="435"/>
         <image name="restartbtn" width="207" height="63"/>
@@ -738,5 +791,7 @@
         <image name="tile51" width="256" height="128"/>
         <image name="tile52" width="284" height="226"/>
         <image name="tile7" width="128" height="128"/>
+        <image name="waterdrop" width="306" height="472"/>
+        <image name="weights" width="1200" height="552"/>
     </resources>
 </document>
