@@ -81,5 +81,24 @@ class Snail: UIImageView {
         
     }
     
+    func playWalkAnimation() {
+        
+        self.image = UIImage(named: "blue_walk1.png") //this sets a default image
+        
+        self.animationImages = nil //clear any images that might be in there
+        
+        var imgArray = [UIImage]()
+        for x in (1 ..< 6) {
+            let img = UIImage(named: "blue_walk\(x).png")
+            imgArray.append(img!)
+        }
+        
+        self.animationImages = imgArray
+        self.animationDuration = 0.8
+        self.animationRepeatCount = 1 //having a zero here means it will repeat infinitely
+        self.startAnimating()
+        NSTimer.scheduledTimerWithTimeInterval(0.8, target: self, selector: "playIdleAnimation", userInfo: nil, repeats: false)
+        
+    }
     
 }

@@ -86,12 +86,7 @@ class BabyGolemVC: UIViewController {
         monsterHappy = true
         startTimer()
         
-        foodImg.alpha = DIM_ALPHA
-        foodImg.userInteractionEnabled = false
-        heartImg.alpha = DIM_ALPHA
-        heartImg.userInteractionEnabled = false
-        weights.alpha = DIM_ALPHA
-        weights.userInteractionEnabled = false
+        dimIcons()
         
         if currentItm == 0 {
             sfxHeart.play()
@@ -138,6 +133,7 @@ class BabyGolemVC: UIViewController {
             if penalties >= MAX_PENALTIES {
                 gameOver() //we died
                 restartBtn.hidden = false
+                
             }
             
         }
@@ -182,9 +178,24 @@ class BabyGolemVC: UIViewController {
     }
     
     func gameOver() {
-        timer.invalidate() //stop the tiem we died
+        timer.invalidate() //stop the time we died
+        dimIcons()
         monsterImg.playDeathAnimation()
         sfxDeath.play()
+    }
+    
+    func dimIcons() {
+        
+        //print("calling dimIcons")
+        heartImg.alpha = DIM_ALPHA
+        heartImg.userInteractionEnabled = false
+        
+        foodImg.alpha = DIM_ALPHA
+        foodImg.userInteractionEnabled = false
+        
+        weights.alpha = DIM_ALPHA
+        weights.userInteractionEnabled = false
+        
     }
     
     

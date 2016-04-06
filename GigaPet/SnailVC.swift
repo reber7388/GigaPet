@@ -14,6 +14,7 @@ class SnailVC: UIViewController {
     @IBOutlet weak var monsterImg: Snail!
     @IBOutlet weak var foodImg: DragImg!
     @IBOutlet weak var heartImg: DragImg!
+    @IBOutlet weak var waterDrop: DragImg!
     @IBOutlet weak var penalty1Img: UIImageView!
     @IBOutlet weak var penalty2Img: UIImageView!
     @IBOutlet weak var penalty3Img: UIImageView!
@@ -33,12 +34,14 @@ class SnailVC: UIViewController {
     var sfxHeart: AVAudioPlayer!
     var sfxDeath: AVAudioPlayer!
     var sfxSkull: AVAudioPlayer!
+    var sfxWaterDrop: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         foodImg.dropTarget = monsterImg
         heartImg.dropTarget = monsterImg
+        waterDrop.dropTarget = monsterImg
         
         penalty1Img.alpha = DIM_ALPHA
         penalty2Img.alpha = DIM_ALPHA
@@ -58,6 +61,8 @@ class SnailVC: UIViewController {
             
             try sfxSkull = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("skull", ofType: "wav")!))
             
+            try sfxWaterDrop = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("heart", ofType: "wav")!))
+            
             
             musicPlayer.prepareToPlay()
             musicPlayer.play() //start the backgorund music
@@ -66,7 +71,7 @@ class SnailVC: UIViewController {
             sfxHeart.prepareToPlay()
             sfxDeath.prepareToPlay()
             sfxSkull.prepareToPlay()
-            
+            sfxWaterDrop.prepareToPlay()
             
             
         } catch let err as NSError {
@@ -85,11 +90,17 @@ class SnailVC: UIViewController {
         foodImg.userInteractionEnabled = false
         heartImg.alpha = DIM_ALPHA
         heartImg.userInteractionEnabled = false
+        waterDrop.alpha = DIM_ALPHA
+        waterDrop.userInteractionEnabled = false
         
         if currentItm == 0 {
             sfxHeart.play()
-        } else {
+        } else if currentItm == 1 {
             sfxBite.play()
+            monsterImg.playWalkAnimation()
+        } else {
+            sfxWaterDrop.play()
+            monsterImg.playWalkAnimation()
         }
     }
     
@@ -133,20 +144,36 @@ class SnailVC: UIViewController {
         }
         
         
-        let rand = arc4random_uniform(2)//give a random number between 2 numbers which will be 0 or 1
+        let rand = arc4random_uniform(3)//give a random number between 2 numbers which will be 0 or 1
         
         if rand == 0 {
+            heartImg.alpha = OPAUQE
+            heartImg.userInteractionEnabled = true
+            
             foodImg.alpha = DIM_ALPHA
             foodImg.userInteractionEnabled = false
             
-            heartImg.alpha = OPAUQE
-            heartImg.userInteractionEnabled = true
-        } else {
+            waterDrop.alpha = DIM_ALPHA
+            waterDrop.userInteractionEnabled = false
+            
+        } else if rand == 1 {
             heartImg.alpha = DIM_ALPHA
             heartImg.userInteractionEnabled = false
             
             foodImg.alpha = OPAUQE
             foodImg.userInteractionEnabled = true
+            
+            waterDrop.alpha = DIM_ALPHA
+            waterDrop.userInteractionEnabled = false
+        } else {
+            heartImg.alpha = DIM_ALPHA
+            heartImg.userInteractionEnabled = false
+            
+            foodImg.alpha = DIM_ALPHA
+            foodImg.userInteractionEnabled = false
+            
+            waterDrop.alpha = OPAUQE
+            waterDrop.userInteractionEnabled = true
         }
         
         currentItm = rand
